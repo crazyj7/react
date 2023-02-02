@@ -7,6 +7,7 @@ import MyToggle from './MyToggle';
 import MyGreeting from './MyGreeting';
 import { useState } from 'react';
 import MyList from './MyList';
+import MySelect from './MySelect';
 
 function App() {
   const [toggle, setToggle] = useState(false) ;
@@ -29,6 +30,8 @@ function App() {
 
       <MyList/>
 
+      <MySelect/>
+      
     </div>
   );
 }
