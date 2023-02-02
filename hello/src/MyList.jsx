@@ -18,6 +18,7 @@ export default class MyList extends React.Component {
 				<ul>
 					{this.datalist}
 				</ul>
+				{this.props.children}
 			</div>
 		) ;
 	}

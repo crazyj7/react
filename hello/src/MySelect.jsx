@@ -8,7 +8,8 @@ export default class MySelect extends React.Component {
 
 	constructor(props) {
 		super(props);
-		// const [fruit, setFruit] = useState('apple') ;  // 헐.. useState()는 함수형에서만 사용 가능. 
+		// const [fruit, setFruit] = useState('apple') ; 
+	    // 헐.. useState()는 함수형에서만 사용 가능...
 		// Component에서는 사용 불가했었네... 
 	}
 
@@ -25,7 +26,7 @@ export default class MySelect extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div style={{backgroundColor: '#ea0'}}>
 				  <form onSubmit={this.handleSubmit}>
 					<label> Pick Fruite: 
 						<select value={this.state.fruit} onChange={this.fruitChange}>
@@ -37,6 +38,7 @@ export default class MySelect extends React.Component {
 					</label>
 					<input type="submit" value="Submit" />
 				</form>
+				{this.props.children}
 			</div>
 		)
 	}

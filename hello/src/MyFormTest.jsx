@@ -1,12 +1,30 @@
 import React, {Component } from 'react';
 
-export default class MyFormTest extends Component{
+class MyFormTest extends Component{
+
+    constructor(props) {
+        super(props)
+
+        // 바인딩을 해줘야. handleChange 함수에서 this를 사용할 수 있음.
+        // this.handleChange = this.handleChange.bind(this)
+        // 다른 방법으로는 람다식사용. 변수로 함수를 받음. 
+    }
+
     // 상태 저장소에 2개 초기화. (id, name)
     state ={
         id: '', name: ''
     }
 
-    handleChange = (e) => {
+/*     handleChange(e)  {
+        // 이 핸들러에서 현재 값을 설정함. 
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+ */
+
+     handleChange = (e) => {
+        // this 바인딩이 필요없다!!! 
         // 이 핸들러에서 현재 값을 설정함. 
         this.setState({
             [e.target.name]: e.target.value
@@ -16,7 +34,7 @@ export default class MyFormTest extends Component{
     handleSubmit(e) {
         // 디폴트 동작 (여기서는 submit)을 막는다. 
         e.preventDefault();
-        console.log('You clicked submit.');
+        alert('You clicked submit.');
 
         // js와는 다르게 여기서 return false 해봐서 default 동작을 못 막는다. 
         // 명시적으로 preventDefault()를 호출해줘야 함. 
@@ -39,4 +57,5 @@ export default class MyFormTest extends Component{
     }
 }
 
+export {MyFormTest}
 
