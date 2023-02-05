@@ -29,6 +29,10 @@ function App() {
 
   // 사용자 추가........
   const addUser = (p) => {
+    if ( p.name.length==0 || p.email.length==0 ) {
+      alert('data is empty');
+      return false ;
+    }
     // setUsers( users.concat( {...p, id: users.length.toString()}) )
     setUsers( users.concat( {...p, id: uuid(), active:false }) )
     // 여기서 출력해도 반영되기 전 값이다. 반영된 후 가 아님!!! .
