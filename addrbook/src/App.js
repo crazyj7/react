@@ -57,7 +57,8 @@ function App() {
     const current = new Date();
     const time = current.toLocaleTimeString("en-US");
     console.log(time, "I'm counting...") ;
-    return users.filter( u => u.active==true) .length
+    
+    return users.filter( u => u.active==true).length
   }
 
   const activeUserCount = countOper()
